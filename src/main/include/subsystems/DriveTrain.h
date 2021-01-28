@@ -127,18 +127,12 @@ frc::Encoder m_rightEncoder;
 // The gyro sensor
 frc::ADXRS450_Gyro m_gyro;
 
+
+
 // Odometry class for tracking robot pose
 frc::DifferentialDriveOdometry m_odometry;
 
 double kEncoderDistancePerPulse = 0;
-
-/*int kLeftMotor1Port  = 0;
-int kLeftMotor2Port  = 1;
-int kRightMotor1Port = 2;
-int kRightMotor2Port = 3;
-
-int kRightEncoderPorts[10];
-int kLeftEncoderPorts[10];*/
 
 };
 
