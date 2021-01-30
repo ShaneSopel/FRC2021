@@ -5,6 +5,10 @@
 #pragma once
 
 #include <frc2/command/SubsystemBase.h>
+#include <frc/PWMTalonFx.h>
+#include <frc/Encoder.h>
+
+#include "Constants.h"
 
 class Conveyor : public frc2::SubsystemBase {
  public:
@@ -21,14 +25,7 @@ class Conveyor : public frc2::SubsystemBase {
    */
   void SimulationPeriodic() override;
 
-  // ConveyorUp
-  // Moves conveyor up
-  void ConveyorUp();
-
-  // ConveyorDown
-  // Moves conveyor Down
-  void ConveyorDown();
-
+  void SetConveyor();
 
   // ResetEncoder
   // Resets encoder to zero
@@ -36,7 +33,7 @@ class Conveyor : public frc2::SubsystemBase {
 
   //GetEncoderValue
   //Returns current encoder value
-  void GetEncoderValue();
+  frc::Encoder& GetEncoderValue();
 
  private:
   // Components (e.g. motor controllers and sensors) should generally be
@@ -46,8 +43,6 @@ class Conveyor : public frc2::SubsystemBase {
   frc::PWMTalonFX conveyorMotor;
 
  // Declares conveyor encoder
-  frc::PMWTalonFX conveyorEncoder;
-  
-
+  frc::Encoder conveyorEncoder;
 
 };

@@ -1,7 +1,6 @@
 // Copyright (c) FIRST and other WPILib contributors.
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
-
 #pragma once
 
 /**
@@ -13,3 +12,13 @@
  * command-specific namespaces within this header, which can then be used where
  * they are needed.
  */
+
+
+
+namespace ConveyorConstants
+{
+    const int ConveyorMotor1Port = 4;
+    //array 
+    static const int ConveyorEncoderPorts[10] = {0,1,2,3,4,5,6,7,8,9};
+
+}
