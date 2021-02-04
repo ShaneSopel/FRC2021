@@ -13,3 +13,13 @@
  * command-specific namespaces within this header, which can then be used where
  * they are needed.
  */
+namespace IntakeConstants
+
+{
+    const int IntakeMotor1Port = 5;
+    const int IntakeMotor2Port = 6;
+    const int IntakeMotor3Port = 7;
+
+    static const int IntakeEncoderPorts0[10] = {0,1,2,3,4,5,6,7,8,9};
+    static const int IntakeEncoderPorts1[10] = {0,1,2,3,4,5,6,7,8,9};
+}
