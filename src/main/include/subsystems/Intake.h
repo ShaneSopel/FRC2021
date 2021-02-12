@@ -13,29 +13,31 @@ class Intake : public frc2::SubsystemBase{
      /**
      * called whenever CommandScheduler runs.
      */
-     void Periodic() override;
+
+     //void Periodic() override;
 
      /*
      called when CommandScheduler runs during simulation
      */
-     void SimulationPeriodic() override; 
+
+     //void SimulationPeriodic() override; 
   
      // ResetEncoders
      // Resets encoders for rake to zero
      void ResetEncoders();
 
      // return encoder value for rake/pinion  
-     frc::Encoder& GetEncoderValue();
+     frc::Encoder& GetInEncoderValue();
+
+     frc::Encoder& GetPinEncoderValue();
 
      void SetIntake();
      // sets retractable to default pos.
      // note: rake and pinion run simultaniously - two motors
 
-     void Inhale();
+     void In_exhale();
      //function to take in balls - no value need return
-
-     void Exhale();
-     // not sure if needed- but relieve   
+ 
 
      void RakeOrPin();
      // two motors - bumpers control
@@ -56,5 +58,6 @@ class Intake : public frc2::SubsystemBase{
 
      // one encoder for intake
      // one for both pin motors - run at same time
- 
+    double kEncoder = 0;
+
 };
