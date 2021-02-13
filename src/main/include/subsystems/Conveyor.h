@@ -7,6 +7,7 @@
 #include <frc2/command/SubsystemBase.h>
 #include <frc/PWMTalonFx.h>
 #include <frc/Encoder.h>
+#include <frc/SpeedControllerGroup.h>
 
 #include "Constants.h"
 
@@ -45,4 +46,5 @@ class Conveyor : public frc2::SubsystemBase {
  // Declares conveyor encoder
   frc::Encoder conveyorEncoder;
 
+  frc::SpeedControllerGroup ConveyorMotors{conveyorMotor};
 };

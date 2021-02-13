@@ -3,6 +3,16 @@
 // the WPILib BSD license file in the root directory of this project.
 
 #include "RobotContainer.h"
+#include <frc/XboxController.h>
+#include <frc2/command/button/JoystickButton.h>
+
+frc::XboxController DriveController{2};
+  // Creates an XboxController on port 2
+
+frc2::JoystickButton IntakeButtonFWD(&DriveController,6);
+frc2::JoystickButton IntakeButtonREV(&DriveController,5);
+
+
 
 RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem) {
   // Initialize all of your commands and subsystems here

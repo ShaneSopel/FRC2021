@@ -6,12 +6,13 @@ Conveyor::Conveyor()
     : conveyorMotor{ConveyorMotor1Port},
       conveyorEncoder{ConveyorEncoderPorts[0],ConveyorEncoderPorts[1]}
 {
+    conveyorEncoder.SetDistancePerPulse(0);       
     ResetEncoder();
 }
 
 void Conveyor::SetConveyor()
 {
-    conveyorMotor.Set();
+    ConveyorMotors.Set(10);
 }
 
   // ResetEncoder
