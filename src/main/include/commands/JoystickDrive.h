@@ -23,16 +23,14 @@ class JoystickDrive
    * @param forward The control input for driving forwards/backwards
    * @param rotation The control input for turning
    */
- JoystickDrive(DriveTrain* subsystem, std::function<double()> forward,
-               std::function<double()> rotation);
+ JoystickDrive(DriveTrain* subsystem);
 
-  void Execute() override;
+  void Execute(double forward, double rot);
   bool IsFinished() override;
 
  private:
   DriveTrain* m_drive;
-  std::function<double()> m_forward;
-  std::function<double()> m_rotation;
+ 
 };
 
 #endif

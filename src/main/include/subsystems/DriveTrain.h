@@ -127,8 +127,6 @@ frc::Encoder m_rightEncoder;
 // The gyro sensor
 frc::ADXRS450_Gyro m_gyro;
 
-
-
 // Odometry class for tracking robot pose
 frc::DifferentialDriveOdometry m_odometry;
 

@@ -4,20 +4,21 @@
 
 #include "commands/JoystickDrive.h"
 
-JoystickDrive::JoystickDrive(DriveTrain* subsystem,
-                           std::function<double()> forward,
-                           std::function<double()> rotation)
-    : m_drive{subsystem}, m_forward{forward}, m_rotation{rotation}
+JoystickDrive::JoystickDrive(DriveTrain* subsystem)
+    : m_drive{subsystem}
 {
   AddRequirements({subsystem});
 }
 
-void JoystickDrive::Execute()
+void JoystickDrive::Execute(double forward, double rot)
 {
-  m_drive->ArcadeDrive(m_forward(), m_rotation());
+  m_drive->ArcadeDrive(forward, rot);
 }
 
 bool JoystickDrive::IsFinished()
 {
   return false;
 }
+
+//try this later. 
+//m_forward{forward}, m_rotation{rotation}

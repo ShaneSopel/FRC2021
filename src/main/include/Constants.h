@@ -2,9 +2,9 @@
 // Open Source Software; you can modify and/or share it under the terms of
 // the WPILib BSD license file in the root directory of this project.
 
-///#pragma once
-#ifndef CONSTANTS_H
-#define CONSTANTS_H
+#pragma once
+//#ifndefCONSTANTS_H
+//#defineCONSTANTS_H
 
 /**
  * The Constants header provides a convenient place for teams to hold robot-wide
@@ -31,4 +31,5 @@ static const int kLeftEncoderPorts[10]  = {0,1,2,3,4,5,6,7,8,9};
 
 }
 
-#endif
+
+//#endif
