@@ -4,6 +4,7 @@
 #include <frc/PWMTalonFX.h>
 #include <frc/Encoder.h>
 #include "Constants.h"
+#include <frc/SPeedControllerGroup.h>
 
 class Intake : public frc2::SubsystemBase{
     
@@ -31,11 +32,11 @@ class Intake : public frc2::SubsystemBase{
 
      frc::Encoder& GetPinEncoderValue();
 
-     void SetIntake();
+     void SetIntakeZero();
      // sets retractable to default pos.
      // note: rake and pinion run simultaniously - two motors
 
-     void In_exhale();
+     void In_exhale(IntakePosition Pos);
      //function to take in balls - no value need return
  
 
@@ -58,6 +59,9 @@ class Intake : public frc2::SubsystemBase{
 
      // one encoder for intake
      // one for both pin motors - run at same time
+
+     frc::SpeedControllerGroup PinionMotors{m_pinion0, m_pinion1};
+     frc::SpeedControllerGroup Intake_M{m_intake};
     double kEncoder = 0;
 
 };

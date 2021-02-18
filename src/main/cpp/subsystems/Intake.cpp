@@ -31,15 +31,26 @@ frc::Encoder& Intake::GetPinEncoderValue()
     return pin_mEncoder;
 }
 
-void Intake::SetIntake()
+void Intake::SetIntakeZero()
 {
-    
-    //s
+    double val = inEncoder.GetDistance();
+    if (val != 0) 
+    {
+        //Intake_M.Set(0);
+    } 
+    //sets the intake to choose in or exhale
 }
 
-void Intake::In_exhale()
+void Intake::In_exhale(IntakePosition Pos)
 {
-    //s
+    if (Pos == Inhale)
+    {
+        Intake_M.Set(10);
+    }
+    else if (Pos == Exhale)
+    {
+        Intake_M.Set(-10);
+    }
 }
 
 void Intake::RakeOrPin()
