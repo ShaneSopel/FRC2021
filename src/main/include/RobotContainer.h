@@ -9,6 +9,9 @@
 #include "commands/ExampleCommand.h"
 #include "subsystems/ExampleSubsystem.h"
 
+#include <frc/XboxController.h>
+#include <frc2/command/button/JoystickButton.h>
+
 /**
  * This class is where the bulk of the robot should be declared.  Since
  * Command-based is a "declarative" paradigm, very little robot logic should
@@ -19,6 +22,15 @@
 class RobotContainer {
  public:
   RobotContainer();
+
+  frc::XboxController OperatorController{1};
+  // Creates an XboxController on port 2
+
+ frc2::JoystickButton cargoIntakeFWD(&OperatorController,6);
+ frc2::JoystickButton cargoIntakeREV(&OperatorController,5);
+ frc2::JoystickButton elevatorMiddle(&OperatorController, );
+ frc2::JoystickButton elevatorHigh();
+ frc2::JoystickButton elevatorBottom();
 
   frc2::Command* GetAutonomousCommand();
 
