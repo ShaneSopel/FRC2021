@@ -24,6 +24,10 @@ class RobotContainer {
  public:
   RobotContainer();
 
+   frc::XboxController DriveController(1);
+
+   frc2::JoystickButton 
+
   frc2::Command* GetAutonomousCommand();
 
  private:
