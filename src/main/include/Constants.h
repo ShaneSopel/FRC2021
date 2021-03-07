@@ -21,10 +21,10 @@ namespace DriveConstants
 
 const double kEncoderDistancePerPulse = 0;
 
-const int kLeftMotor1Port  = 0;
-const int kLeftMotor2Port  = 1;
-const int kRightMotor1Port = 2;
-const int kRightMotor2Port = 3;
+const int kLeftMotor1Port  = 1;
+const int kLeftMotor2Port  = 2;
+const int kRightMotor1Port = 3;
+const int kRightMotor2Port = 4;
 
 static const int kRightEncoderPorts[10] = {0,1,2,3,4,5,6,7,8,9};
 static const int kLeftEncoderPorts[10]  = {0,1,2,3,4,5,6,7,8,9};

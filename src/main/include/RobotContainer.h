@@ -9,9 +9,23 @@
 #include "commands/ExampleCommand.h"
 #include "subsystems/ExampleSubsystem.h"
 
+#include "subsystems/DriveTrain.h"
+#include "commands/JoystickDrive.h"
+
+#include <frc/GenericHID.h>
 #include <frc/Joystick.h>
 #include <frc/XboxController.h>
 #include <frc2/command/button/JoystickButton.h>
+#include <frc2/command/Command.h>
+#include <frc2/command/ConditionalCommand.h>
+#include <frc2/command/InstantCommand.h>
+#include <frc2/command/ParallelRaceGroup.h>
+#include <frc2/command/RunCommand.h>
+#include <frc2/command/SequentialCommandGroup.h>
+#include <frc2/command/WaitCommand.h>
+#include <frc2/command/WaitUntilCommand.h>
+
+
 
 /**
  * This class is where the bulk of the robot should be declared.  Since
@@ -24,16 +38,16 @@ class RobotContainer {
  public:
   RobotContainer();
 
-   frc::XboxController DriveController(1);
-
-   frc2::JoystickButton 
-
-  frc2::Command* GetAutonomousCommand();
-
+   frc::XboxController DriveController{0};
+   frc2::Command* GetAutonomousCommand();
+  
+  
  private:
   // The robot's subsystems and commands are defined here...
   ExampleSubsystem m_subsystem;
   ExampleCommand m_autonomousCommand;
+
+  DriveTrain m_drive;
 
   void ConfigureButtonBindings();
 };
