@@ -21,10 +21,15 @@ RobotContainer::RobotContainer() : m_autonomousCommand(&m_subsystem) {
 
 void RobotContainer::ConfigureButtonBindings() {
   // Configure your button bindings here
-  
-  
-   
 
+   m_drive.SetDefaultCommand(frc2::RunCommand(
+      [this] {
+        m_drive.ArcadeDrive(
+            DriveController.GetY(frc::GenericHID::kLeftHand),
+            DriveController.GetX(frc::GenericHID::kRightHand));
+      },
+      {&m_drive}));
+  
 }
 
 frc2::Command* RobotContainer::GetAutonomousCommand() {

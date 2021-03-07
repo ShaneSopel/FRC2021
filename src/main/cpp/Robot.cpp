@@ -58,7 +58,13 @@ void Robot::TeleopInit() {
 /**
  * This function is called periodically during operator control.
  */
-void Robot::TeleopPeriodic() {}
+void Robot::TeleopPeriodic() {
+
+  m_drive.ArcadeDrive(
+    DriveController.GetY(frc::GenericHID::kLeftHand),DriveController.GetX(frc::GenericHID::kRightHand)
+  );
+  
+}
 
 /**
  * This function is called periodically during test mode.
